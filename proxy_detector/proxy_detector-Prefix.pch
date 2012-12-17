@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'proxy_detector' target in the 'proxy_detector' project
+//
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif
