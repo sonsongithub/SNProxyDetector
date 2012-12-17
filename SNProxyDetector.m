@@ -82,6 +82,8 @@
 
 @implementation SNProxyDetector
 
+// referenced from http://stackoverflow.com/questions/4379156/retrieve-pac-script-using-wpad-on-osx
+
 CFArrayRef CopyPACProxiesForURL(CFURLRef targetURL, CFErrorRef *error) {
     CFDictionaryRef proxies = SCDynamicStoreCopyProxies(NULL);
 	
