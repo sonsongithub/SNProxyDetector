@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		140F2838167AC43400200961 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140F2837167AC43400200961 /* Foundation.framework */; };
-		140F283F167AC43400200961 /* proxy_detector.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 140F283E167AC43400200961 /* proxy_detector.1 */; };
+		140F283F167AC43400200961 /* proxy_detector.1 in Copy binary to com.sonson.git-proxy-updater */ = {isa = PBXBuildFile; fileRef = 140F283E167AC43400200961 /* proxy_detector.1 */; };
 		140F2846167AC46300200961 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140F2845167AC46300200961 /* CFNetwork.framework */; };
 		140F284A167AC4CA00200961 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140F2849167AC4CA00200961 /* SystemConfiguration.framework */; };
 		1499293C167EBA5900FAD302 /* SNProxyDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1499293B167EBA5900FAD302 /* SNProxyDetector.m */; };
@@ -28,14 +28,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		140F2831167AC43400200961 /* CopyFiles */ = {
+		140F2831167AC43400200961 /* Copy binary to com.sonson.git-proxy-updater */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				140F283F167AC43400200961 /* proxy_detector.1 in CopyFiles */,
+				140F283F167AC43400200961 /* proxy_detector.1 in Copy binary to com.sonson.git-proxy-updater */,
 			);
+			name = "Copy binary to com.sonson.git-proxy-updater";
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -180,7 +181,8 @@
 			buildPhases = (
 				140F282F167AC43400200961 /* Sources */,
 				140F2830167AC43400200961 /* Frameworks */,
-				140F2831167AC43400200961 /* CopyFiles */,
+				140F2831167AC43400200961 /* Copy binary to com.sonson.git-proxy-updater */,
+				141EBD94169A5D3F0046E0E8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -216,6 +218,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		141EBD94169A5D3F0046E0E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp $BUILT_PRODUCTS_DIR/$PRODUCT_NAME $SRCROOT/com.sonson.git-proxy-updater/";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		140F282F167AC43400200961 /* Sources */ = {
