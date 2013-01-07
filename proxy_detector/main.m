@@ -44,14 +44,13 @@ int main(int argc, const char *argv[]) {
 			NSDictionary *proxy = [[info objectForKey:@"ProxyAutoConfigs"] objectAtIndex:0];
 			if ([proxy objectForKey:@"kCFProxyHostNameKey"] && [proxy objectForKey:@"kCFProxyPortNumberKey"] && ([[proxy objectForKey:@"kCFProxyTypeKey"] isEqualToString:(NSString*)kCFProxyTypeHTTP] || [[proxy objectForKey:@"kCFProxyTypeKey"] isEqualToString:(NSString*)kCFProxyTypeHTTPS])) {
 				printf("%s\n%d", [[proxy objectForKey:@"kCFProxyHostNameKey"] UTF8String], [[proxy objectForKey:@"kCFProxyPortNumberKey"] intValue]);
+				return 0;
 			}
 		}
 	}
-	else {
-		NSDictionary *info = [SNProxyDetector proxyInfo];
-		if ([info objectForKey:@"HTTPProxy"] && [info objectForKey:@"HTTPPort"]) {
-			printf("%s\n%s", [[info objectForKey:@"HTTPProxy"] UTF8String], [[info objectForKey:@"HTTPPort"] UTF8String]);
-		}
+	NSDictionary *info = [SNProxyDetector proxyInfo];
+	if ([info objectForKey:@"HTTPProxy"] && [info objectForKey:@"HTTPPort"]) {
+		printf("%s\n%d", [[info objectForKey:@"HTTPProxy"] UTF8String], [[info objectForKey:@"HTTPPort"] intValue]);
 	}
 	return 0;
 }
